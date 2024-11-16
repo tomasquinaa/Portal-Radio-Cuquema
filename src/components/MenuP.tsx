@@ -28,10 +28,10 @@ export const MenuP = () => {
           <IoCodeSlash size={24} />
           <span>Programação</span>
         </Link>
-        <a href="" className="flex items-center space-x-2 hover:underline">
+        <Link to={routes.MENU_PODCAST} className="flex items-center space-x-2 hover:underline">
           <IoMic size={24} />
           <span>Podcast</span>
-        </a>
+        </Link>
         <a href="" className="flex items-center space-x-2 hover:underline">
           <IoBriefcase size={24} />
           <span>Empregos</span>
