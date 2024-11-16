@@ -4,6 +4,7 @@ import { Programacao } from "./pages/Programacao"
 import { Home } from "./pages/Home"
 import { PodCast } from "./pages/Podcast"
 import { Publicidades } from "./pages/Publicidades"
+import { Play } from "./pages/Play"
 
 
 export const RouteComponent = () => {
@@ -14,6 +15,7 @@ export const RouteComponent = () => {
                 <Route path={routes.MENU_PROGRAMACAO} element={<Programacao/>} />
                 <Route path={routes.MENU_PODCAST} element={<PodCast/>} />
                 <Route path={routes.MENU_PUBLICIDADE} element={<Publicidades/>} />
+                <Route path={routes.MENU_PLAY} element={<Play/>} />
             </Routes>
         </>
     )

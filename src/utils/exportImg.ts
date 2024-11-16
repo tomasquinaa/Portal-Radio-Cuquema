@@ -1,4 +1,5 @@
 import favicon from "../assets/favicon.ico";
+import logotipo from "../assets/logotipo.png";
 import sinprof from "../assets/sinprof.jpeg";
 import not3 from "../assets/not3.jpg";
 import not4 from "../assets/not4.png";
@@ -13,6 +14,7 @@ import publicidade4 from "../assets/publicidade4.png";
 
 export const exportImg = {
     favicon,
+    logotipo,
     sinprof,
     not3,
     not4,

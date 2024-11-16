@@ -17,10 +17,10 @@ export const MenuP = () => {
           <IoIosHome size={24} className="bg-yellow-500 p-1 rounded-full" />
           <span>Início</span>
         </Link>
-        <a href="" className="flex items-center space-x-2 hover:underline">
+        <Link to={routes.MENU_PLAY} className="flex items-center space-x-2 hover:underline">
           <IoPlayCircle size={24} />
           <span>Play</span>
-        </a>
+        </Link>
         <Link
           to={routes.MENU_PROGRAMACAO}
           className="flex items-center space-x-2 hover:underline"

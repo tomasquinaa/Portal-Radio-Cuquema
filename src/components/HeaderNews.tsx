@@ -43,7 +43,7 @@ export const HeaderNews = () => {
   }, [currentIndex]);
 
   return (
-    <div className="bg-gray-900 text-white flex items-center p-4 rounded shadow-lg relative space-x-6">
+    <div className="bg-gray-900 text-white flex items-center p-2 rounded shadow-lg relative space-x-6">
       <div className="flex items-center font-bold text-lg space-x-2">
         <span role="img" aria-label="breaking news">
           🔴
@@ -64,9 +64,9 @@ export const HeaderNews = () => {
                 <img
                   src={news.image}
                   alt={news.title}
-                  className="w-full h-full object-cover rounded shadow-md"
+                  className="w-full h-full object-cover rounded shadow-md p-1"
                 />
-                <div className="absolute inset-0 bg-black opacity-30 rounded"></div>
+                <div className="absolute inset-0 bg-black opacity-30"></div>
               </div>
               <p className="text-white text-base font-semibold truncate">
                 {news.title}
