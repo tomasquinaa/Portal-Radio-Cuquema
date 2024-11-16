@@ -43,7 +43,7 @@ export const HeaderNews = () => {
   }, [currentIndex]);
 
   return (
-    <div className="bg-gray-900 text-white flex items-center p-2 rounded shadow-lg relative space-x-6">
+    <div className="bg-gray-900 text-white flex items-center rounded shadow-lg relative space-x-6">
       <div className="flex items-center font-bold text-lg space-x-2">
         <span role="img" aria-label="breaking news">
           🔴

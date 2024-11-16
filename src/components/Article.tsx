@@ -40,11 +40,11 @@ export const Article = () => {
           <div className="flex-1">
             {/* Header com Categorias */}
             <div className="flex space-x-2 mb-4">
-              <span className="bg-red-600 text-white px-2 py-1 text-xs font-semibold rounded">
-                NOTÍCIAS
+              <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+                <span className="mr-1">📰</span> NOTÍCIAS
               </span>
-              <span className="bg-red-600 text-white px-2 py-1 text-xs font-semibold rounded">
-                SOCIEDADE
+              <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+                <span className="mr-1">🌍</span> SOCIEDADE
               </span>
             </div>
 
@@ -92,11 +92,11 @@ export const Article = () => {
           <div className="flex-1">
             {/* Header com Categorias */}
             <div className="flex space-x-2 mb-4">
-              <span className="bg-red-600 text-white px-2 py-1 text-xs font-semibold rounded">
-                NOTÍCIAS
+              <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+                <span className="mr-1">📰</span> NOTÍCIAS
               </span>
-              <span className="bg-red-600 text-white px-2 py-1 text-xs font-semibold rounded">
-                SOCIEDADE
+              <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+                <span className="mr-1">🌍</span> SOCIEDADE
               </span>
             </div>
 
@@ -137,8 +137,8 @@ export const Article = () => {
           <div className="flex-1">
             {/* Header com Categorias */}
             <div className="flex space-x-2 mb-4">
-              <span className="bg-red-600 text-white px-2 py-1 text-xs font-semibold rounded">
-                SEM CATEGORIA
+              <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+                <span className="mr-1">🌍</span> SOCIEDADE
               </span>
             </div>
 
