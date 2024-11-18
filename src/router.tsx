@@ -13,6 +13,9 @@ export const RouteComponent = () => {
             <Routes>
                 <Route path={routes.MENU_INICIO} element={<Home/>} />
                 <Route path={routes.MENU_PROGRAMACAO} element={<Programacao/>} />
+                <Route path={routes.MENU_PODCAST} element={<PodCast/>} />
+                <Route path={routes.MENU_PUBLICIDADE} element={<Publicidades/>} />
+                <Route path={routes.MENU_PLAY} element={<Play/>} />
             </Routes>
         </>
     )
