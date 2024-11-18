@@ -3,13 +3,13 @@ import { exportImg } from "../utils/exportImg";
 export const Article = () => {
   return (
     <>
-      <article className="bg-white shadow p-6 mb-8 border-gray-200">
+      <article className="bg-white shadow p-4 mb-8 border-gray-200 rounded">
         <div className="flex items-center space-x-2 mb-4">
-          <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-            Notícias
+          <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+            <span className="mr-1">📰</span> NOTÍCIAS
           </span>
-          <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-            Sociedade
+          <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+            <span className="mr-1">🌍</span> SOCIEDADE
           </span>
         </div>
         <h2 className="text-2xl font-bold mb-2">
@@ -25,7 +25,7 @@ export const Article = () => {
         </p>
       </article>
 
-      <article className="bg-white shadow-md p-6 mb-8 mx-auto border border-gray-200">
+      <article className="bg-white shadow-md p-4 mb-8 mx-auto border border-gray-200 rounded">
         <div className="flex">
           {/* Imagem à Esquerda */}
           <div className="relative mr-6">
@@ -40,11 +40,11 @@ export const Article = () => {
           <div className="flex-1">
             {/* Header com Categorias */}
             <div className="flex space-x-2 mb-4">
-              <span className="bg-red-600 text-white px-2 py-1 text-xs font-semibold rounded">
-                NOTÍCIAS
+              <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+                <span className="mr-1">📰</span> NOTÍCIAS
               </span>
-              <span className="bg-red-600 text-white px-2 py-1 text-xs font-semibold rounded">
-                SOCIEDADE
+              <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+                <span className="mr-1">🌍</span> SOCIEDADE
               </span>
             </div>
 
@@ -77,7 +77,7 @@ export const Article = () => {
         </div>
       </article>
 
-      <article className="bg-white shadow-md p-6 mb-8 mx-auto border border-gray-200">
+      <article className="bg-white shadow-md p-6 mb-8 mx-auto border border-gray-200 rounded">
         <div className="flex">
           {/* Imagem à Esquerda */}
           <div className="relative mr-6">
@@ -92,11 +92,11 @@ export const Article = () => {
           <div className="flex-1">
             {/* Header com Categorias */}
             <div className="flex space-x-2 mb-4">
-              <span className="bg-red-600 text-white px-2 py-1 text-xs font-semibold rounded">
-                NOTÍCIAS
+              <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+                <span className="mr-1">📰</span> NOTÍCIAS
               </span>
-              <span className="bg-red-600 text-white px-2 py-1 text-xs font-semibold rounded">
-                SOCIEDADE
+              <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+                <span className="mr-1">🌍</span> SOCIEDADE
               </span>
             </div>
 
@@ -122,7 +122,7 @@ export const Article = () => {
         </div>
       </article>
 
-      <article className="bg-white shadow-md p-6 mb-8 mx-auto border border-gray-200">
+      <article className="bg-white shadow-md p-6 mb-8 mx-auto border border-gray-200 rounded">
         <div className="flex">
           {/* Imagem à Esquerda */}
           <div className="relative mr-6">
@@ -137,8 +137,8 @@ export const Article = () => {
           <div className="flex-1">
             {/* Header com Categorias */}
             <div className="flex space-x-2 mb-4">
-              <span className="bg-red-600 text-white px-2 py-1 text-xs font-semibold rounded">
-                SEM CATEGORIA
+              <span className="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full flex items-center">
+                <span className="mr-1">🌍</span> SOCIEDADE
               </span>
             </div>
 

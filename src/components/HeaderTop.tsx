@@ -1,19 +1,16 @@
-import { ImSearch } from "react-icons/im";
-import { IoMdMenu } from "react-icons/io";
+import { exportImg } from "../utils/exportImg";
+
 
 export const HeaderTop = () => {
   return (
-    <header className="bg-white shadow p-4 flex justify-between items-center">
-      <div>
-        <h1 className="text-3xl font-bold">Rádio Cuquema</h1>
-        <p className="text-sm">93.1 FM DO CUITO PARA O MUNDO</p>
-      </div>
+    <header className="bg-white shadow-md p-4 flex justify-between items-center">
       <div className="flex items-center space-x-4">
-        <button className="text-primaryPurple px-4 py-2 rounded-md flex items-center">
-          <ImSearch className="text-primaryPurple text-xl" />
-        </button>
-        Menu
-        <IoMdMenu className="text-primaryPurple text-xl" />
+        {/* Logotipo com melhorias */}
+        <img 
+          src={exportImg.logotipo} 
+          alt="Logo" 
+          className="w-36 h-auto object-contain transition-transform transform hover:scale-105 duration-300" 
+        />
       </div>
     </header>
   );
