@@ -6,7 +6,7 @@ const MENU_INICIO = '/',
     MENU_PROGRAMACAO = '/programacao',
     MENU_PODCAST = '/podcast',
     MENU_EMPREGOS = '/empregos',
-    MENU_PROGRAMA_GRAVADO = '/Programas Gravados',
+    MENU_PROGRAMA_GRAVADO = 'https://creators.spotify.com/pod/show/radiocuquema',
     MENU_PUBLICIDADE = '/Publicidades'
     
 

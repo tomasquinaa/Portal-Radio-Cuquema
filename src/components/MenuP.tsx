@@ -36,13 +36,13 @@ export const MenuP = () => {
           <IoBriefcase size={24} />
           <span>Empregos</span>
         </a>
-        <a
-          href="https://podcasters.spotify.com/pod/show/radiocuquema"
+        <Link
+          to={routes.MENU_PROGRAMA_GRAVADO}
           className="flex items-center space-x-2 hover:underline"
         >
           <IoRecording size={24} />
           <span>Programas Gravados</span>
-        </a>
+        </Link>
         <a href="#" className="flex items-center space-x-2 hover:underline">
           <IoBriefcase size={24} />
           <span>Publicidades</span>

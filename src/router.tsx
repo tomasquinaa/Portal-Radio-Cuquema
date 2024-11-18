@@ -10,6 +10,7 @@ export const RouteComponent = () => {
             <Routes>
                 <Route path={routes.MENU_INICIO} element={<Home/>} />
                 <Route path={routes.MENU_PROGRAMACAO} element={<Programacao/>} />
+                <Route path={routes.MENU_PROGRAMA_GRAVADO} element={<Programacao/>} />
             </Routes>
         </>
     )
