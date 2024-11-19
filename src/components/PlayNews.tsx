@@ -1,71 +1,126 @@
-
+import { useState } from "react";
+import { FaPlay, FaPause } from "react-icons/fa"; // Importa os ícones de play e pause
+import { exportImg } from "../utils/exportImg";
 
 export const PlayNews = () => {
-    return (
-        <div className="min-h-screen py-6 px-4">
-            <div className="max-w-8xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden"> 
-                <div className="bg-primaryPurple text-white p-4">
-                    <h2 className="text-2xl font-bold">Playlist de Hoje</h2>
-                    <p className="text-sm">Confira as músicas mais tocadas!</p>
-                </div>
-        
-                <div className="p-4">
-                    <div className="flex items-center justify-between p-2 border-b hover:bg-gray-100">
-                        <div className="flex items-center space-x-4">
-                            <button className="text-indigo-600 hover:text-indigo-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-5.197 3.02A1 1 0 018 13.305V6.695a1 1 0 011.555-.832l5.197 3.02a1 1 0 010 1.664z" />
-                                </svg>
-                            </button>
-                            <div>
-                                <p className="text-lg font-semibold">Título da Música 1</p>
-                                <p className="text-sm text-gray-500">Artista 1</p>
-                            </div>
-                        </div>
-                        <p className="text-sm text-gray-500">3:45</p>
-                    </div>
-            
-                    <div className="flex items-center justify-between p-2 border-b hover:bg-gray-100">
-                        <div className="flex items-center space-x-4">
-                            <button className="text-indigo-600 hover:text-indigo-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-5.197 3.02A1 1 0 018 13.305V6.695a1 1 0 011.555-.832l5.197 3.02a1 1 0 010 1.664z" />
-                                </svg>
-                            </button>
-                            <div>
-                                <p className="text-lg font-semibold">Título da Música 2</p>
-                                <p className="text-sm text-gray-500">Artista 2</p>
-                            </div>
-                        </div>
-                        <p className="text-sm text-gray-500">4:10</p>
-                    </div>
-            
-                    <div className="flex items-center justify-between p-2 border-b hover:bg-gray-100">
-                        <div className="flex items-center space-x-4">
-                            <button className="text-indigo-600 hover:text-indigo-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-5.197 3.02A1 1 0 018 13.305V6.695a1 1 0 011.555-.832l5.197 3.02a1 1 0 010 1.664z" />
-                                </svg>
-                            </button>
-                            <div>
-                                <p className="text-lg font-semibold">Título da Música 3</p>
-                                <p className="text-sm text-gray-500">Artista 3</p>
-                            </div>
-                        </div>
-                        <p className="text-sm text-gray-500">2:30</p>
-                    </div>
-                </div>
-        
-                <div className="bg-gray-200 p-4 flex items-center justify-between">
-                    <button className="flex items-center space-x-2 px-4 py-2 bg-primaryPurple text-white rounded-lg hover:bg-indigo-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m5-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>Pausar Tudo</span>
-                    </button>
-                    <p className="text-gray-600">3 músicas - Duração Total: 10:25</p>
-                </div>
+  const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(
+    null
+  );
+  const [currentPlaying, setCurrentPlaying] = useState<string | null>(null); // Armazena o áudio atual sendo tocado
+
+  const handlePlay = (audioUrl: string) => {
+    // Pausar o áudio atual, se existir
+    if (currentAudio) {
+      currentAudio.pause();
+      setCurrentAudio(null);
+      setCurrentPlaying(null);
+
+      // Se clicou no mesmo áudio, para a execução
+      if (currentPlaying === audioUrl) return;
+    }
+
+    // Criar e tocar um novo áudio
+    const newAudio = new Audio(audioUrl);
+    newAudio.play();
+    setCurrentAudio(newAudio);
+    setCurrentPlaying(audioUrl);
+  };
+
+  const playlists = [
+    {
+      title: "Adrenalina",
+      listeners: 16,
+      description:
+        "Trilha sonora para esportes com o melhor de música eletrônica, pop, rock e hip hop!",
+      img: exportImg.play01,
+      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    },
+    {
+      title: "Acústico",
+      listeners: 32,
+      description:
+        "Canções originais e versões acústicas de grandes nomes da música.",
+      img: exportImg.play06,
+      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    },
+    {
+      title: "Natal",
+      listeners: 10,
+      description:
+        "Clássicos natalinos e canções atuais reunidos em uma programação especial.",
+      img: exportImg.play05,
+      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    },
+    {
+      title: "Taylor Swift",
+      listeners: 24,
+      description:
+        "Ouça os hits e faixas marcantes da premiada cantora Taylor Swift.",
+      img: exportImg.play04,
+      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    },
+    {
+      title: "Gospel",
+      listeners: 280,
+      description:
+        "Os maiores nomes da música gospel nacional reunidos em uma só estação!",
+      img: exportImg.play03,
+      audio: "/audio/gospel.mp3",
+    },
+    {
+      title: "Faxina sem Sofrência",
+      listeners: 64,
+      description:
+        "O melhor da música nacional sertaneja com lançamentos e grandes sucessos!",
+      img: exportImg.play02,
+      audio: "/audio/faxina.mp3",
+    },
+  ];
+
+  return (
+    <>
+      <header className="flex items-center justify-between p-4">
+        <nav className="flex space-x-4">
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">
+            Todas
+          </h1>
+        </nav>
+      </header>
+
+      <main className="p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {playlists.map((playlist, index) => (
+            <div key={index} className="rounded-lg overflow-hidden shadow-lg">
+              <img src={playlist.img} alt={playlist.title} className="w-full" />
+              <div className="p-4">
+                <h3 className="text-lg font-bold">{playlist.title}</h3>
+                <p className="text-sm text-gray-400">
+                  {playlist.listeners} ouvindo agora
+                </p>
+                <p className="text-sm mt-2">{playlist.description}</p>
+                <button
+                  className={`mt-4 px-4 py-2 flex items-center justify-center gap-2 text-sm font-medium rounded ${
+                    currentPlaying === playlist.audio
+                      ? "bg-secundaryPurple hover:bg-secundaryPurple text-white"
+                      : "bg-primaryPurple hover:bg-primaryPurple text-white"
+                  }`}
+                  onClick={() => handlePlay(playlist.audio)}
+                >
+                  {currentPlaying === playlist.audio ? (
+                    <>
+                      <FaPause /> Tocando
+                    </>
+                  ) : (
+                    <>
+                      <FaPlay /> Tocar
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
-        </div>   
-    )
-}
+          ))}
+        </div>
+      </main>
+    </>
+  );
+};

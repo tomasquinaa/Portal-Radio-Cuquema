@@ -1,3 +1,13 @@
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTiktok,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer className="bg-primaryPurple text-white p-4 flex justify-between items-center">
@@ -5,30 +15,52 @@ export const Footer = () => {
         <p>
           Copyright © 2024 Rádio Cuquema. Todos os direitos reservados. |
           Desenvolvido por
-          <a
-            href="#"
+          <Link
+            to="#"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:underline ml-1"
+            className="text-yellow-400 font-bold text-lg hover:underline hover:text-yellow-300 ml-1 transition-all"
           >
-            Império Salomão
-          </a>
+            <span className="drop-shadow-lg">Império Salomão</span>
+          </Link>
         </p>
       </div>
-      <button className="bg-red-500 text-white rounded-full p-2 ml-2 hover:bg-red-600">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
+      <div className="flex gap-4">
+        <a
+          href="mailto:example@example.com"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <path
-            fillRule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-11.707a1 1 0 00-1.414-1.414L10 8.586 7.707 6.293a1 1 0 10-1.414 1.414L8.586 10l-2.293 2.293a1 1 0 101.414 1.414L10 11.414l2.293 2.293a1 1 0 001.414-1.414L11.414 10l2.293-2.293z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </button>
+          <MdEmail className="text-2xl hover:text-gray-300" />
+        </a>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFacebookF className="text-2xl hover:text-gray-300" />
+        </a>
+        <a
+          href="https://wa.me/123456789"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaWhatsapp className="text-2xl hover:text-gray-300" />
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+          <FaTwitter className="text-2xl hover:text-gray-300" />
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+          <FaTiktok className="text-2xl hover:text-gray-300" />
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaInstagram className="text-2xl hover:text-gray-300" />
+        </a>
+      </div>
     </footer>
   );
 };

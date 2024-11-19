@@ -32,10 +32,10 @@ export const MenuP = () => {
           <IoMic size={24} />
           <span>Podcast</span>
         </Link>
-        <a href="" className="flex items-center space-x-2 hover:underline">
+        {/* <Link to="" className="flex items-center space-x-2 hover:underline">
           <IoBriefcase size={24} />
           <span>Empregos</span>
-        </a>
+        </Link> */}
         <Link
           to={routes.MENU_PROGRAMA_GRAVADO}
           className="flex items-center space-x-2 hover:underline"

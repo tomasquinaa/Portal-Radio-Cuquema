@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         primaryPurple: '#743D77', 
+        secundaryPurple: '#111827'
       },
     },
   },
