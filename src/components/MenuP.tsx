@@ -43,7 +43,7 @@ export const MenuP = () => {
           <IoRecording size={24} />
           <span>Programas Gravados</span>
         </Link>
-        <Link to="#" className="flex items-center space-x-2 hover:underline">
+        <Link to={routes.MENU_PUBLICIDADE} className="flex items-center space-x-2 hover:underline">
           <IoBriefcase size={24} />
           <span>Publicidades</span>
         </Link>
