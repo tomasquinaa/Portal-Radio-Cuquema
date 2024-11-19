@@ -1,4 +1,5 @@
-import { ProgramaWeek } from "../components/ProgramaWeek";
+
+import ProgramaWeek from "../components/ProgramaWeek";
 import { Sidebar } from "../components/Sidebar";
 import { Layout } from "../Layout/Layout";
 
