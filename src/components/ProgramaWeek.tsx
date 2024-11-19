@@ -1,130 +1,163 @@
-export const ProgramaWeek = () => {
+import { useState } from "react";
+import { exportImg } from "../utils/exportImg";
+
+// Definindo os tipos
+type Dia = "seg" | "ter" | "qua" | "qui" | "sex" | "sab" | "dom";
+
+type Programa = {
+  titulo: string;
+  horario: string;
+  descricao: string;
+};
+
+const programacoes: Record<Dia, Programa[]> = {
+  seg: [
+    {
+      titulo: "Onda Informativa",
+      horario: "05:00h - 06:00h",
+      descricao: "🌙 Acompanhando as ondas informativas! 🎶",
+    },
+    {
+      titulo: "Cuito em Movimento",
+      horario: "06:00h - 10:30h",
+      descricao: "🌹 Acompanhado Cuito em Movimento! ❤️",
+    },
+    {
+      titulo: "A Outra Conversa",
+      horario: "10:30h - 10:40h",
+      descricao: "🎵 Acompanhado a outra conversa! 🌅",
+    },
+    {
+      titulo: "Jornal do Dia",
+      horario: "12:00h - 10:40h",
+      descricao: "🎵 Acompanhado o Jornal do Dia! 🌅",
+    },
+    {
+      titulo: "Tchá Fica só",
+      horario: "12:00h - 10:40h",
+      descricao: "🎵 Acompanhado o Tchá Fica só! 🌅",
+    },
+    {
+      titulo: "Jornal da Noite",
+      horario: "12:00h - 10:40h",
+      descricao: "🎵 Acompanhado o Jornal da Noite! 🌅",
+    },
+  ],
+  ter: [
+    {
+      titulo: "Terça Relax",
+      horario: "08:00h - 10:00h",
+      descricao: "🎶 Relaxe com músicas calmas para começar o dia.",
+    },
+  ],
+  qua: [
+    {
+      titulo: "Terça Relax",
+      horario: "08:00h - 10:00h",
+      descricao: "🎶 Relaxe com músicas calmas para começar o dia.",
+    },
+  ],
+  qui: [],
+  sex: [],
+  sab: [
+    {
+      titulo: "Ondiango",
+      horario: "10:00h - 12:00h",
+      descricao: "🎵 Acompanhado o Ondiango! 🌅",
+    },
+    {
+      titulo: "Bié na Lupa",
+      horario: "12:30h - 12:30h",
+      descricao: "🎵 Acompanhado o bié na lupa! 🌅",
+    },
+    {
+      titulo: "Palco do kuduro",
+      horario: "16:00h - 16:30h",
+      descricao: "🎵 Acompanhado o palco do kuduro! 🌅",
+    },
+  ],
+  dom: [
+    {
+      titulo: "Manhãs Religiosas",
+      horario: "08:10h - 10:00h",
+      descricao: "🎵 Acompanhado o Manhãs religiosas! 🌅",
+    },
+    {
+      titulo: "Domingos de Todos",
+      horario: "10:10h - 13:00h",
+      descricao: "🎵 Acompanhado o Domingos de todos! 🌅",
+    },
+    {
+      titulo: "Debate em Umbundu",
+      horario: "13h30:10h - 14:00h",
+      descricao: "🎵 Acompanhado o debate em Umbundu! 🌅",
+    },
+    {
+      titulo: "Canal Hip Hop",
+      horario: "14:30h - 15:00h",
+      descricao: "🎵 Acompanhado o Hip Hop! 🌅",
+    },
+  ],
+};
+
+export default function ProgramaWeek() {
+  const [diaSelecionado, setDiaSelecionado] = useState<Dia>("seg"); 
+
   return (
-    <>
-      <div className="text-white p-6">
-        <h1 className="text-4xl font-bold mb-6 text-black">Programação</h1>
+    <div className="p-6 bg-gradient-to-r min-h-screen">
+      <div className="bg-white rounded-lg shadow-lg p-6">
+        <h1 className="text-2xl font-bold text-gray-800 mb-4">
+          Lista das Nossas Programações
+        </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div>
-            <h2 className="text-blue-500 text-lg font-semibold mb-4 pb-2 border-b border-gray-500">
-              Segunda à Sexta
-            </h2>
+        {/* Botões para selecionar o dia */}
+        <div className="flex space-x-2 mb-6">
+          {Object.keys(programacoes).map((dia) => (
+            <button
+              key={dia}
+              onClick={() => setDiaSelecionado(dia as Dia)}
+              className={`px-3 py-1 rounded-full font-medium ${
+                dia === diaSelecionado
+                  ? "bg-cyan-500 text-white"
+                  : "bg-gray-300 text-gray-600"
+              }`}
+            >
+              {dia.charAt(0).toUpperCase() + dia.slice(1)}{" "}
+              {programacoes[dia as Dia].length}
+            </button>
+          ))}
+        </div>
 
-            <div className="space-y-6 text-black">
-              <div className="pb-2 border-b border-gray-500">
-                <h3 className="text-2xl font-semibold mb-2 ">5h</h3>
-                <p className=" text-sm">
-                  05h00 <span className="font-bold">Onda</span> Informativa
-                </p>
+        {/* Exibição da programação */}
+        <div className="space-y-6">
+          {programacoes[diaSelecionado].length > 0 ? (
+            programacoes[diaSelecionado].map((programa, index) => (
+              <div
+                key={index}
+                className="flex items-start space-x-4 bg-gray-50 rounded-lg p-4 shadow-md"
+              >
+                <img
+                  src={exportImg.logotipo}
+                  alt={`Imagem de ${programa.titulo}`}
+                  className="w-32 h-32 object-contain"
+                />
+                
+                <div>
+                  <h2 className="text-lg font-bold text-gray-800">
+                    {programa.titulo}
+                  </h2>
+                  <p className="text-sm text-gray-500">{programa.horario}</p>
+                  <p className="mt-2 text-gray-700 text-sm">
+                    {programa.descricao}
+                  </p>
+                </div>
               </div>
-
-              <div className="pb-2 border-b border-gray-500">
-                <h3 className="text-2xl font-semibold mb-2 ">6h</h3>
-                <p className=" text-sm">
-                  06h às 10:30 <span className="font-bold">Cuito</span> em Movimento
-                </p>
-              </div>
-
-              <div className="pb-2 border-b border-gray-500">
-                <h3 className="text-2xl font-semibold mb-2 ">10h</h3>
-                <p className=" text-sm">
-                  10:30h às 10:40 <span className="font-bold">A outra</span> conversa
-                </p>
-              </div>
-
-              <div className="pb-2 border-b border-gray-500">
-                <h3 className="text-2xl font-semibold mb-2 ">12h</h3>
-                <p className=" text-sm">
-                  12h00 <span className="font-bold">Jornal</span> do dia
-                </p>
-              </div>
-
-              <div className="pb-2 border-b border-gray-500">
-                <h3 className="text-2xl font-semibold mb-2 ">14h</h3>
-                <p className=" text-sm">
-                  14h00 <span className="font-bold">Tchá</span> Fica só
-                </p>
-              </div>
-
-              <div className="pb-2 border-b border-gray-500">
-                <h3 className="text-2xl font-semibold mb-2 ">17h</h3>
-                <p className=" text-sm">
-                  17h00 <span className="font-bold">Yayulako</span>
-                </p>
-              </div>
-
-              <div className="pb-2 border-b border-gray-500">
-                <h3 className="text-2xl font-semibold mb-2 ">19h</h3>
-                <p className=" text-sm">
-                  19h00 <span className="font-bold">Jornal</span> da Noite
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-blue-500 text-lg font-semibold mb-4 pb-2 border-b border-gray-500">Sábado</h2>
-        
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-semibold mb-2 text-black">10h</h3>
-                <p className="text-black text-sm pb-2 border-b border-gray-500">
-                  10h às 12h <span className="font-bold">Ondiango</span> 
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-semibold mb-2 text-black">12h</h3>
-                <p className="text-black text-sm pb-2 border-b border-gray-500">
-                  12h30 <span className="font-bold">Bié</span> na lupa
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-semibold mb-2 text-black">16h</h3>
-                <p className="text-black text-sm pb-2 border-b border-gray-500">
-                  12h30 <span className="font-bold">Palco</span> do kuduro
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-blue-500 text-lg font-semibold mb-4 pb-2 border-b border-gray-500">
-              Domingo
-            </h2>
-
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-semibold mb-2 text-black">08h</h3>
-                <p className="text-black text-sm pb-2 border-b border-gray-500">
-                  08h10 <span className="font-bold">Manhãs</span> Religiosas
-                </p>
-                <p className="text-black text-sm pb-2 border-b border-gray-500">
-                  10h <span className="font-bold">Domingos</span> de Todos 
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-semibold mb-2 text-black">13h</h3>
-                <p className="text-black text-sm pb-2 border-b border-gray-500">
-                  13h30 <span className="font-bold">Debate </span>em Umbundu
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-semibold mb-2 text-black">17h</h3>
-                <p className="text-black text-sm pb-2 border-b border-gray-500">
-                  13h30 <span className="font-bold">Canal </span>Hip hop
-                </p>
-              </div>
-
-            </div>
-          </div>
+            ))
+          ) : (
+            <p className="text-gray-500">Nenhuma programação disponível.</p>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
-};
+}

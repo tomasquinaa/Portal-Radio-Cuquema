@@ -7,10 +7,6 @@ export const PublicidadeNews = () => {
 
             <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-bold text-gray-800">Publicidade</h2>
-                <button
-                className="text-gray-500 text-sm border border-gray-300 px-3 py-1 rounded-md hover:bg-gray-100">
-                Ativar alertas
-                </button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-6">
