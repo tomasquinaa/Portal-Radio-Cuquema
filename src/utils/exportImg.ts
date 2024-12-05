@@ -16,9 +16,15 @@ import play03 from "../assets/play03.png";
 import play04 from "../assets/play04.png";
 import play05 from "../assets/play05.png";
 import play06 from "../assets/play06.png";
+import slider01 from "../assets/slider01.png";
+import slider02 from "../assets/slider02.jpg";
+import slider03 from "../assets/slider03.jpg";
+import slider04 from "../assets/slider04.jpg";
+import premio01 from "../assets/premio01.png";
+import premio022 from "../assets/premio022.png";
 
 
-export const exportImg = {
+export const exportImg: { [key: string]: string } = {
     favicon,
     logotipo,
     sinprof,
@@ -37,4 +43,10 @@ export const exportImg = {
     play04,
     play05,
     play06,
+    slider01,
+    slider02,
+    slider03,
+    slider04,
+    premio01,
+    premio022,
 }
