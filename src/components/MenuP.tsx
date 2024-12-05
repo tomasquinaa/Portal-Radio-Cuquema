@@ -19,7 +19,7 @@ export const MenuP = () => {
         </Link>
         <Link to={routes.MENU_PLAY} className="flex items-center space-x-2 hover:underline">
           <IoPlayCircle size={24} />
-          <span>Play</span>
+          <span>Rádio</span>
         </Link>
         <Link
           to={routes.MENU_PROGRAMACAO}
