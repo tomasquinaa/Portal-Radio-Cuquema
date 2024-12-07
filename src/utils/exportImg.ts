@@ -49,4 +49,5 @@ export const exportImg: { [key: string]: string } = {
     slider04,
     premio01,
     premio022,
+    
 }

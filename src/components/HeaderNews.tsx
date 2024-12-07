@@ -62,7 +62,7 @@ export const HeaderNews = () => {
           <img
             src={exportImg.logotipo}
             alt="Logo"
-            className="w-36 h-auto object-contain transition-transform transform hover:scale-105 duration-300"
+            className="w-36 h-auto object-contain transition-transform transform hover:scale-105 duration-300 filter brightness-0 invert"
           />
         </Link>
       </div>
